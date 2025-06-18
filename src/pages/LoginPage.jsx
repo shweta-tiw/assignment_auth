@@ -17,7 +17,7 @@ export default function LoginPage() {
 
     if (email === storedUser.email && password === storedUser.password) {
       alert("Login successful!");
-      navigate("/profile"); // navigate to profile page
+      navigate("/profile");
     } else {
       alert("Invalid email or password.");
     }
@@ -33,9 +33,8 @@ export default function LoginPage() {
           Sign in to your PopX account
         </h2>
         <p className="text-sm text-gray-500 text-center mb-6">
-  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-</p>
-
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        </p>
 
         <label className="block text-sm font-semibold text-purple-700 mb-1">
           Email Address
@@ -44,7 +43,6 @@ export default function LoginPage() {
           type="email"
           placeholder="Enter email address"
           className="w-full p-2 mb-4 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-600"
-
           value={email}
           onChange={(e) => setEmail(e.target.value)}
           required
@@ -56,8 +54,7 @@ export default function LoginPage() {
         <input
           type="password"
           placeholder="Enter password"
-         className="w-full p-2 mb-4 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-600"
-
+          className="w-full p-2 mb-4 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-600"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
           required
@@ -65,8 +62,8 @@ export default function LoginPage() {
 
         <button
           type="submit"
-        className="w-full bg-purple-800 hover:bg-purple-900 text-white font-semibold py-3 rounded-full transition duration-300"
-  >
+          className="w-full bg-purple-800 hover:bg-purple-900 text-white font-semibold py-3 rounded-full transition duration-300"
+        >
           Login
         </button>
       </form>
