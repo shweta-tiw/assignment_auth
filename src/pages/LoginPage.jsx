@@ -24,19 +24,21 @@ export default function LoginPage() {
   };
 
   return (
-    <div className="flex items-center justify-center min-h-screen bg-gray-100">
+    
+     <div className="flex justify-center  min-h-screen">
+
       <form
         onSubmit={handleLogin}
-        className="max-w-sm w-full bg-white p-8 rounded-lg shadow-md"
+        className="max-w-sm w-full bg-gray-100 p-8 rounded-lg shadow-md"
       >
-        <h2 className="text-2xl font-bold mb-1 text-center text-gray-900">
-          Sign in to your PopX account
+        <h2 className="text-2xl font-bold mb-1  text-gray-900">
+          Sign in to your <br /> PopX account
         </h2>
-        <p className="text-sm text-gray-500 text-center mb-6">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        <p className="text- text-gray-500 mb-6">
+          Lorem ipsum dolor sit amet , <br />consectetur adipiscing elit.
         </p>
 
-        <label className="block text-sm font-semibold text-purple-700 mb-1">
+        <label className="block text-sm font-semibold text-purple-400 mb-1">
           Email Address
         </label>
         <input
@@ -48,7 +50,7 @@ export default function LoginPage() {
           required
         />
 
-        <label className="block text-sm font-semibold text-purple-700 mb-1">
+        <label className="block text-sm font-semibold text-purple-400 mb-1">
           Password
         </label>
         <input
@@ -62,11 +64,12 @@ export default function LoginPage() {
 
         <button
           type="submit"
-          className="w-full bg-purple-800 hover:bg-purple-900 text-white font-semibold py-3 rounded-full transition duration-300"
+          className="w-full bg-purple-200  text-white font-semibold py-3 rounded-sm transition duration-300"
         >
           Login
         </button>
       </form>
     </div>
+    
   );
 }

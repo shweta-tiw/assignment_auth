@@ -20,16 +20,7 @@ export default function RegisterPage() {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    const phoneRegex = /^[0-9]{10}$/;
-    if (!phoneRegex.test(formData.phone)) {
-      alert("Please enter a valid 10-digit phone number.");
-      return;
-    }
-
-    if (formData.password.length < 6) {
-      alert("Password must be at least 6 characters.");
-      return;
-    }
+    
 
     localStorage.setItem("popxUser", JSON.stringify(formData));
     alert("Account created successfully!");
@@ -45,21 +36,21 @@ export default function RegisterPage() {
   ];
 
   return (
-    <div className="flex items-center justify-center min-h-screen bg-gray-100 px-4">
+  <div className="flex justify-center  min-h-screen">
       <form
         onSubmit={handleSubmit}
-        className="max-w-md w-full bg-white p-8 rounded-xl shadow-lg"
+        className="max-w-md w-sm bg-gray-100  p-8 "
       >
         <h2
-          className="text-2xl font-bold mb-2 text-center text-gray-900
+          className="text-2xl font-bold mb-2  text-gray-900
 "
         >
-          Create your PopX account
+          Create your  <br />PopX account
         </h2>
 
         {fields.map(({ label, name, type = "text" }) => (
           <div key={name} className="mb-4">
-            <label className="block text-sm font-semibold text-gray-700 mb-1">
+            <label className="block text-sm  text-purple-700 mb-1">
               {label} *
             </label>
             <input
@@ -74,28 +65,33 @@ export default function RegisterPage() {
           </div>
         ))}
 
-        <div className="flex gap-6 mt-2 mb-3">
-          {["Yes", "No"].map((option) => (
-            <label
-              key={option}
-              className="flex items-center text-sm font-medium text-gray-700"
-            >
-              <input
-                type="radio"
-                name="isAgency"
-                value={option}
-                checked={formData.isAgency === option}
-                onChange={handleChange}
-                className="mr-2 accent-purple-600"
-              />
-              {option}
-            </label>
-          ))}
-        </div>
+       <div className="flex flex-col gap-2 mt-2 mb-3">
+  <p className="text-sm font-medium text-gray-700">Are you an Agency?</p>
+
+  <div className="flex gap-6">
+    {["Yes", "No"].map((option) => (
+      <label
+        key={option}
+        className="flex items-center text-sm font-medium text-gray-700"
+      >
+        <input
+          type="radio"
+          name="isAgency"
+          value={option}
+          checked={formData.isAgency === option}
+          onChange={handleChange}
+          className="mr-2 accent-purple-600"
+        />
+        {option}
+      </label>
+    ))}
+  </div>
+</div>
+
 
         <button
           type="submit"
-          className="w-full bg-purple-700 hover:bg-purple-800 text-white font-semibold py-3 rounded-full transition duration-300"
+          className="w-full bg-purple-700 hover:bg-purple-800 text-white font-semibold py-3 mt-20 rounded-sm transition duration-300"
         >
           Create Account
         </button>
